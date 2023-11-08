@@ -1,0 +1,41 @@
+.label-contact{
+    font-weight: bold; 
+    font-size: 12px;
+    
+}
+
+
+
+.input-contact {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border-color: antiquewhite;
+}
+
+.border-contact{
+    background-color: #DCE0E4;
+}
+
+.button {
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  .buttonx {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .button1 {background-color: darkgreen;} /* Green */
+  .button2 {background-color: red;} /* Blue */
