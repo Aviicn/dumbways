@@ -21,7 +21,7 @@ function submitData() {
         // harus tervalidasi dulu
         //const mailtoLink = `mailto:${inputEmail}?subject=${inputSubject}&body=${inputMessage}`;
 
-        
+        //window.location.href = mailtoLink;
 
         console.log(`Name : ${inputName}\nEmail: ${inputEmail}\nPhone: ${inputPhone}\nSubject: ${inputSubject}\nMessage: ${inputMessage}`)
 
@@ -68,10 +68,5 @@ function sendEmail() {
       .then(function (message) { 
         alert("mail sent successfully") 
       }); 
-      let a = document.createElement('a')
-      a.href = `mailto:${inputEmail}?subject=${inputSubject}&body=${inputMessage}`
-      a.click()
     }
-
   }
-  
