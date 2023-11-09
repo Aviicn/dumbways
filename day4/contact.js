@@ -18,11 +18,7 @@ function submitData() {
     } else if (inputMessage == "") {
         alert('Message harus diisi')
     } else {
-        // harus tervalidasi dulu
-        //const mailtoLink = `mailto:${inputEmail}?subject=${inputSubject}&body=${inputMessage}`;
-
-        
-
+       
         console.log(`Name : ${inputName}\nEmail: ${inputEmail}\nPhone: ${inputPhone}\nSubject: ${inputSubject}\nMessage: ${inputMessage}`)
 
         let a = document.createElement('a')
@@ -32,4 +28,4 @@ function submitData() {
          alert("mail sent successfully") 
     }
 }
-  
+

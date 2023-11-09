@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Creating Blog Page</title>
+    <link rel="stylesheet" href="myProject.css" />
+</head>
+
+<body>
+    <!-- NavBar -->
+
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+        <div class="blog-form">
+            <div class="form-container">
+                <form onsubmit="submitBlog(event)">
+                    <h1>Add My Project</h1>
+                    <div>
+                        <label for="inputTitle">Project Name</label>
+                        <input type="text" id="inputTitle" />
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="inputTitle">Start Date</label>
+                                    <input type="text" id="inputTitle" />
+                                </td>
+                                <td>
+                                    <label for="inputTitle">End Date</label>
+                                    <input type="text" id="inputTitle" />
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <div>
+                        <label for="inputContent">Description</label>
+                        <textarea id="inputContent"></textarea>
+                    </div>
+                    <div>
+                        <label for="inputTitle">Technologies</label>
+                        <table>
+                            <tr>
+                                <td>
+                                    
+                                    <input type="radio" id="inputTitle" value="NodeJs" />
+                                    <label for="inputTitle">Node Js</label>
+                                    
+                                    <input type="radio" id="inputTitle" value="ReactJs" />
+                                    <label for="inputTitle">React Js</label>
+                                </td>
+                                <td>
+                                    
+                                    <input type="radio" id="inputTitle" value="NextJs"/>
+                                    <label for="inputTitle">Next Js</label>
+                                    
+                                    <input type="radio" id="inputTitle" value="TypeScript" />
+                                    <label for="inputTitle">TypeScript</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <label>Upload Image</label>
+                        <div class="input-blog-image-group">
+                            <label for="inputImage">
+                                <p>Attach File</p>
+                                <img src="assets/icon/file.png" alt="file" />
+                            </label>
+                            <input type="file" id="inputImage" hidden />
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button>Post Blog</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <hr class="line" />
+        <div id="contents" class="blog-list">
+            <!-- dynamic content would be here -->
+        </div>
+    </div>
+    <script src="myProject.js"></script>
+</body>
+
+</html>
