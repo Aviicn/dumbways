@@ -70,7 +70,7 @@ function submitBlog(event) {
 // ]
 
 function renderBlog() {
-    document.getElementById("contents").innerHTML = ''
+    document.getElementById("contents").innerHTML = '<div style="width: 400px; background-color:aqua;"><h1>My Project</h1></div>'
    
     for (let index = 0; index < dataBlog.length; index++) {
         document.getElementById("contents").innerHTML += `
