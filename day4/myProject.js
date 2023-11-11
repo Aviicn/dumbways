@@ -17,61 +17,37 @@ function submitBlog(event) {
     let inputTitle = document.getElementById("inputTitle").value
     let inputContent = document.getElementById("inputContent").value
     let inputImage = document.getElementById("inputImage").files
+    let startDate = document.getElementById("startDate").value
+    let endDate = document.getElementById("endDate").value
 
-    console.log("title", inputTitle)
+    let technologi = document.querySelector("input[name=radio]:checked");
+
+    console.log("title", technologi.id)
     console.log("content", inputContent)
+    console.log("date", startDate)
 
     inputImage = URL.createObjectURL(inputImage[0])
     console.log("image", inputImage)
 
     const blog = {
         title: inputTitle,
+        startDate: startDate,
+        endDate: endDate,
+        technologi: technologi.id,
         content: inputContent,
         image: inputImage,
-        postAt: "09 November 2023",
-        author: "Surya Elidanto"
+       // postAt: new Date(),
+        //author: "Avicienna"
     }
-
+    
     dataBlog.push(blog)
     console.log("dataBlog", dataBlog)
     renderBlog()
 }
 
-// function showMeHelloWorld() {
-//     const container = document.getElementById("contents")
-//     container.innerHTML = '<p>Hello World</p>'
-// }
-
-// dataBlog = [
-//  {
-//     title: "title 1",
-//     content: "content 1"
-//  },
-//  {
-//     title: "title 1",
-//     content: "content 1"
-//  },
-//  {
-//     title: "title 2",
-//     content: "content 2"
-//  },
-//  {
-//     title: "title 1",
-//     content: "content 1"
-//  },
-//  {
-//     title: "title 2",
-//     content: "content 2"
-//  },
-//  {
-//     title: "title 3",
-//     content: "content 3"
-//  },
-// ]
-
 function renderBlog() {
-    document.getElementById("contents").innerHTML = '<div style="width: 400px; background-color:aqua;"><h1>My Project</h1></div>'
-   
+    document.getElementById("contents").innerHTML = '<div style="justify-content: center;"><h1>My Project</h1></div>'
+
     for (let index = 0; index < dataBlog.length; index++) {
         document.getElementById("contents").innerHTML += `
         <div class="blog-list-item">
@@ -79,19 +55,31 @@ function renderBlog() {
                 <img src="${dataBlog[index].image}" alt="" />
             </div>
             <div class="blog-content">
-                <div class="btn-group">
-                    <button class="btn-edit">Edit Post</button>
-                    <button class="btn-post">Delete Post</button>
-                </div>
+                
                 <h1>
-                    <a href="project-detail.html" target="_blank">${dataBlog[index].title}</a>
+                    <a href="project-detail.html" >${dataBlog[index].title}</a>
                 </h1>
                 <div class="detail-blog-content">
                     ${dataBlog[index].postAt} | ${dataBlog[index].author}
                 </div>
                 <p>
-                   ${dataBlog[index].content}
+                   ${dataBlog[index].startDate} | ${dataBlog[index].endDate}
                 </p>
+                <p>
+                    ${dataBlog[index].technologi}
+                </p>
+                <p>
+                    ${dataBlog[index].content}
+                </p>
+
+                <img src="google-play.svg" alt="" width="40px">
+                <img src="android1.png" alt="" width="40px">
+                <img src="java.svg" alt="" width="40px">
+
+                <div>
+                <button style="background-color: black; color: white; width: 100px;" >Edit</button>     
+               <button style="background-color: black; color: white; width: 100px;" >Delete</button>
+            </div>
             </div>
         </div>`
     }

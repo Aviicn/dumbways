@@ -3,29 +3,149 @@
 <head>
     <title>My Project - Detail</title>
     <link rel="stylesheet" href="myProject.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .blog-detail {
+            position: relative;
+            margin: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .big-image {
+            height: 300px;
+            width: 550px;
+            margin-right: 20px;
+        }
+
+        .blog-detail-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table img {
+            width: 30px;
+            height: 20px;
+        }
+
+       
+
+
+        p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
-   
+  <!-- Blog -->
+  <div class="blog-detail">
+    <div class="blog-detail-container">
+        <h1>dumbways Web App</h1>
 
-    <!-- Blog -->
-    <div class="blog-detail">
-        <div class="blog-detail-container">
-            <h1>Pasar Coding di Indonesia Dinilai Masih Menjanjikan</h1>
-            <div class="author">12 Jul 2021 22:30 WIB | Ichsan Emrald Alamsyah</div>
-            <img src="assets/image/blog-img.png" alt="detail" />
-            <p>
-                REPUBLIKA.CO.ID, JAKARTA -- Ketimpangan sumber daya manusia (SDM) di
-                sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan
-                penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia,
-                meningkat dua kali lipat dalam satu dekade terakhir. Khusus di sektor
-                teknologi yang berkembang pesat, menurut Kemendikbudristek, Indonesia
-                kekurangan sembilan juta pekerja teknologi hingga tahun 2030. Hal itu
-                berarti Indonesia memerlukan sekitar 600 ribu SDM digital yang
-                memasuki pasar setiap tahunnya.
-            </p>
-        </div>
+        <!-- Big Image, Icon, and Description in the same row -->
+        <div style="display: flex; align-items: center;">
+            <div class="big-image">
+                <img src="images phone 1.jpeg" alt="Big Image" ; width="550px" ; height="300px" class="big-image">
+            </div>
+
+            <table id="myTable">
+                <!-- ... (previous code) ... -->
+
+                <thead>
+                    <tr>
+                        <th>Duration</th>
+                       
+                        
+                    </tr>
+                </thead>
+                <thead>
+                <tbody>
+                    <tr>
+                        
+                        <td><img src="calendar-days-solid.svg" alt="detail" ; height="10px" ; width="20px" /></td>
+                        <td>12 Jan 2021 - 11 Feb 2022</td>
+                    </tr>
+                    <tr>
+                        <td><img src="clock-regular.svg" alt="detail" ; /></td>
+                        <td>1 month</td>
+                    </tr>
+                </tbody>
+                </thead>
+
+                <thead>
+                    <tr>
+                        <th>Technologies</th>
+                      
+                       
+                    </tr>
+                </thead>
+                <thead>
+                <tbody>
+                    <tr>
+                    <td><img src="react.svg" alt="detail" ; /></td>
+                    <td>React.js</td>
+                    <td><img src="node-js.svg" alt="detail" ; /></td>
+                    <td>Node.js</td>
+                    </tr>
+                    <tr>
+                        <td><img src="square-js.svg" alt="detail" /></td>
+                        <td>JavaScript</td>
+                        <td><img src="Socket Io.svg" alt="detail"  /></td>
+                        <td>Socket IO</td>
+                    </tr>
+        </tbody>
+        </thead>
+
+        <!-- ... (remaining code) ... -->
+
+
+        </table>
     </div>
+
+    <p>
+        <!-- Your blog content goes here -->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis facilis, magni culpa maxime voluptatem,
+        pariatur quis veniam modi fuga ad ipsa voluptatibus. Unde numquam corporis provident quo quibusdam
+        temporibus nostrum. ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati consequuntur inventore
+        voluptatibus
+    </p>
+    <p> mollitia minima iure, nobis quam? Esse deleniti error repudiandae quaerat, qui pariatur eligendi
+        officiis maxime eaque, ex maiores quae laborum corporis consequatur iure vel ullam distinctio.
+        Perferendis laboriosam nisi soluta inventore quisquam vitae dolor ab totam debitis praesentium? ipsum
+        dolor sit amet, consectetur adipiscing elit. Nullam non metus nec risus luctus consectetur.
+    </p>
+    <p> Fusce convallis bibendum dui, non rhoncus ligula vehicula a. Duis auctor arcu at bibendum vestibulum.
+        Vivamus vitae velit vitae leo tincidunt efficitur. Sed vestibulum urna eu neque tincidunt tristique.
+        Quisque vel sollicitudin mauris. Curabitur vel felis id nunc gravida finibus. Sed posuere, sapien ac
+        bibendum varius, nunc orci imperdiet sapien, a aliquet leo lacus eget purus. Etiam vel nisi at justo
+        pulvinar varius.
+    </p>
+</div>
+</div>
+
 </body>
 
 </html>

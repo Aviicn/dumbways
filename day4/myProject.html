@@ -34,7 +34,7 @@
       height: 25px;
       width: 25px;
       background-color: #eee;
-      border-radius: 10%;
+      border-radius: 50%;
     }
     
     /* On mouse-over, add a grey background color */
@@ -65,7 +65,7 @@
         left: 9px;
         width: 8px;
         height: 8px;
-        border-radius: 50%;
+        border-radius: 5%;
         background: white;
     }
     </style>
@@ -87,12 +87,12 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label for="inputTitle">Start Date</label>
-                                    <input type="text" id="inputTitle" />
+                                    <label for="startDate">Start Date</label>
+                                    <input type="date" id="startDate" />
                                 </td>
                                 <td>
-                                    <label for="inputTitle">End Date</label>
-                                    <input type="text" id="inputTitle" />
+                                    <label for="endDate">End Date</label>
+                                    <input type="date" id="endDate" />
                                 </td>
                             </tr>
                         </table>
@@ -107,28 +107,29 @@
                         
                         <table>
                             <tr >
+                                
                                 <td style="width: 200px;">
-                                    <label class="container" for="NodeJs">Node Js
-                                        <input type="radio" id="inputTitle" value="NodeJs" checked="checked"/>
+                                    <label class="container">Node Js
+                                        <input type="radio" checked="checked" name="radio" id="nodeJs">
                                         <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container" for="NodeJs">React Js
-                                        <input type="radio" id="inputTitle" value="NodeJs" />
+                                      </label>
+                                      <label class="container">React Js
+                                        <input type="radio" name="radio" id="reactJs">
                                         <span class="checkmark"></span>
-                                    </label>
-                                    
+                                      </label>
+                                      
+                                     
                                 </td>
                                 <td >
 
-                                    <label class="container" for="NodeJs">Next Js
-                                        <input type="radio" id="inputTitle" value="NodeJs"/>
+                                    <label class="container">Next Js
+                                        <input type="radio" name="radio" id="nextJs">
                                         <span class="checkmark"></span>
-                                    </label>
-
-                                    <label class="container" for="NodeJs">TypeScript
-                                        <input type="radio" id="inputTitle" value="NodeJs" />
+                                      </label>
+                                      <label class="container">Typescript
+                                        <input type="radio" name="radio" id="typescript">
                                         <span class="checkmark"></span>
-                                    </label>
+                                      </label>
                                 </td>
                             </tr>
                         </table>
@@ -136,11 +137,11 @@
                     <div>
                         <label>Upload Image</label>
                         <div class="input-blog-image-group">
-                            <label for="inputImage">
-                                <p>Attach File</p>
-                                <img src="assets/icon/file.png" alt="file" />
+                            <label for="inputImage"  >
+                                <input type="file" id="inputImage" style="margin-top: 20px;"  />
+                                <img src="img/file.png" alt="file" />
                             </label>
-                            <input type="file" id="inputImage" hidden />
+                            
                         </div>
                     </div>
                     <div class="button-group">
