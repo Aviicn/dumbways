@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+</html>
+
+<body style="background-color:#DCE0E4;">
+
+    <nav>
+        <ul>
+            <li>
+                <img src="img/dumbways logo.png" alt="" style="height: 50px; padding-top: 10px;">
+            </li>
+            
+            <li style="float:right; ">
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
+                <div class="menu" id="menu">
+                    <!-- Isi menu Anda di sini -->
+                    <a href="home.html" style="color: white;" target="iframe_b">Home</a>
+                    <a href="myProject.html" style="color: white;" target="iframe_b">My Project</a>
+                    <a href="contact.html" style="color: white;" target="iframe_b">Contact Me</a>
+                    
+                </div>
+            </li>
+
+
+        </ul>
+    </nav>
+    <iframe title="iframe" name="iframe_b" width="100%" ; height="600px" ; src="home.html" ;></iframe>
+    <script>
+        feather.replace()
+    </script>
+    <script src="index.js"></script>
+
+</body>

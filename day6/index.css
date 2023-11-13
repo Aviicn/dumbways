@@ -1,0 +1,127 @@
+* {
+    margin:0; 
+    padding:0;
+}
+nav {
+    margin:auto;
+    text-align: center;
+    width: 100%;
+    
+} 
+
+nav ul {
+    background:#37988e;
+    padding: 0 20px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    width: 100%;
+ }
+
+nav ul li{
+    float:left;
+}
+
+nav ul li:hover{
+    background:#d68d9a;
+}
+
+nav ul li:hover a{
+     color:#000;
+}
+
+nav ul li a{
+     display: block;
+     padding: 25px;
+     color: #fff;
+     text-decoration: none;
+}
+*{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-contact {
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+    width: 130px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 25px;
+}
+
+.nav-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link a:hover {
+    color: orangered;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contoh styling untuk elemen header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: black;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
