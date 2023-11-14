@@ -11,7 +11,7 @@ nav {
 
 nav ul {
     background:#37988e;
-    padding: 0 20px;
+    padding: 5px;
     list-style: none;
     position: relative;
     display: inline-table;
@@ -20,6 +20,8 @@ nav ul {
 
 nav ul li{
     float:left;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 nav ul li:hover{
@@ -93,11 +95,14 @@ header {
 }
 
 .hamburger {
-    font-size: 20px;
+    font-size: 50px;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
+    height: 50px;
+    margin-left: 10px;
+    float: right;
 }
 
 .menu {
