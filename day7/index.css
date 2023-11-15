@@ -25,7 +25,7 @@ nav ul li{
 }
 
 nav ul li:hover{
-    background:#d68d9a;
+    background:#28eb3f;
 }
 
 nav ul li:hover a{
@@ -37,6 +37,9 @@ nav ul li a{
      padding: 25px;
      color: #fff;
      text-decoration: none;
+}
+nav ul li a:hover{
+    background-color: red;
 }
 *{
     text-decoration: none;
@@ -115,7 +118,7 @@ header {
     right: 10px;
     width: 100px;
     height: 100px;
-    background-color: gray;
+    background-color: black;
     padding: 10px;
 }
 
