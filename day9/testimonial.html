@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="testimonial.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    
+</head>
+
+<body style="background-color:#DCE0E4;">
+   
+    <div >
+        <h1 style="text-align: center; " >My Testimonials</h1>
+        <h2 style="text-align: center;" >Rating By Star</h2>
+        <div class="testimonial-rating">
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="allTestimonials()">All</button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(1)">1 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(2)">2 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(3)">3 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(4)">4 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(5)">5 <i class="fa -solid fa-star"></i></button>
+        </div>
+        <div  id="testimonials"> 
+            
+        </div>
+       
+    </div>
+   
+
+    <script src="testimonial.js"></script>
+
+</body>
+
+
+</html>
