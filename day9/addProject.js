@@ -32,7 +32,7 @@ function submitBlog(event) {
     let jam = Math.floor((jarakWaktuMillis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let menit = Math.floor((jarakWaktuMillis % (1000 * 60 * 60)) / (1000 * 60));
     let detik = Math.floor((jarakWaktuMillis % (1000 * 60)) / 1000);
-    let bulan = Math.round(hari / 30);
+    let bulan = Math.round(hari/30);
 
     let technologi = document.querySelector("input[name=radio]:checked");
 
@@ -47,11 +47,11 @@ function submitBlog(event) {
         title: inputTitle,
         startDate: startDate,
         endDate: endDate,
-        bulan: bulan,
+        bulan:bulan,
         hari: hari,
-        jam: jam,
-        menit: menit,
-        detik: detik,
+        jam:jam,
+        menit:menit,
+        detik:detik,
         content: inputContent,
         image: inputImage,
         technologi: technologi.id,
@@ -60,7 +60,7 @@ function submitBlog(event) {
         postAt: new Date(),
         author: "Avicienna"
     }
-
+    
     dataBlog.push(blog)
     console.log("dataBlog", dataBlog)
     renderBlog()
