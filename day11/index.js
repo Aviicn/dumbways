@@ -1,17 +1,28 @@
-const path = require('path')
+//use path module
+const path = require('path');
+//use express module
 const express = require('express');
-const bodyParser = require('body-parser');
-
+//use hbs view engine
+const hbs = require('hbs');
 const app = express();
 const port = 3000;
+//set dynamic views file
+app.set("views", path.join (__dirname, 'src/views'))
 
-app.set("view engine","hbs")
-app.set("views", path.join  (__dirname, 'src/views'))
+//set view engine
+app.set('view engine', 'hbs');
+//set public folder as static folder for static file
+app.use(express.static('public'));
 
-app.use("/assets". express.static(path.join(__dirname, 'src/assets')))
+const bodyParser = require('body-parser');
+
+
+app.use("/assets",  express.static(path.join(__dirname, 'src/assets')))
+app.use("/js",  express.static(path.join(__dirname, 'src/js')))
 app.use(express.urlencoded({extended:false}))
 
 app.get('/', home)
+app.get('/home', home)
 app.get('/contact', contact)
 app.get('/blog', blog)
 app.get('/delete-blog/:id', deleteBlog)
@@ -22,7 +33,8 @@ app.post('/add-blog', addBlog)
 app.get('/blog-detail/:id', blogDetail)
 app.get('/testimonial', testimonial)
 
-  const data = [
+
+ const data = [
     {
       title: "Title1",
       content: "Content1"
@@ -38,7 +50,7 @@ app.get('/testimonial', testimonial)
   ]
 
 function home(req, res){
-  res.render('index')
+  res.render('home')
 }
 
 function contact(req, res){
@@ -62,6 +74,17 @@ function addBlog (req, res) {
 
   res.redirect('blog')
 }
+
+function deleteBlog (req, res) {
+  const { title, content } = req.body
+
+  console.log("title :" , title)
+  console.log("content:", content)
+
+
+  res.redirect('blog')
+}
+
 
 function blogDetail(req,res){
   const { id } = req.params

@@ -1,6 +1,6 @@
 const janji = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
-    xhr.open('GET', 'https://api.npoint.io/88b89eb6a5c57443f901', true)
+    xhr.open('GET', 'https://api.npoint.io/f37ca2fac419e290202c', true)
     xhr.onload = () => {
         if (xhr.status === 200) {
             //console.log("berhasil", xhr.response)
@@ -29,7 +29,7 @@ async function allTestimonials() {
     testimonialData.forEach((item) => (
         testimonialHTML += `
         <div class="testimonial-container">
-        <img src="${item.image}" class="testimonial-image" /> 
+        <img src="${item.image}" class="testimonial-image" style="width: 350px; height: 350px;"/> 
         <p class ="testimonial-text"> ${item.content}</p>
         <p class ="testimonial-author"> ${item.author}</p>
         <p class ="testimonial-author"> ${item.rating} <i class="fa -solid fa-star"></i></p>
@@ -51,7 +51,7 @@ function filterTestimonials(rating) {
     testimonialsFiltered.forEach((item) => (
         testimonialHTML += `
         <div style="width: 260px; height: 100px; display="row" class="testimonial-container">
-        <img src="${item.image}" class="testimonial-image" /> 
+        <img src="${item.image}" class="testimonial-image" style="width: 350px; height: 350px;" /> 
         <p class ="testimonial-text"> ${item.content}</p>
         <p class ="testimonial-author"> ${item.author}</p>
         <p class ="testimonial-author"> ${item.rating} <i class="fa -solid fa-star"></i></p>

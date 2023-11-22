@@ -12,11 +12,6 @@
 let dataBlog = []
 
 
-
-
-
-
-
 function submitBlog(event) {
     event.preventDefault()
 
@@ -87,9 +82,9 @@ function renderBlog() {
                     ${dataBlog[index].content}
                 </p>
 
-                <img src="icon/google-play.svg" alt="" width="40px">
-                <img src="icon/android1.png" alt="" width="40px">
-                <img src="icon/java.svg" alt="" width="40px">
+                <img src="assets/icon/google-play.svg" alt="" width="40px">
+                <img src="assets/icon/android1.png" alt="" width="40px">
+                <img src="assets/icon/java.svg" alt="" width="40px">
 
                 <div>
                  <button style="background-color: black; color: white; width: 100px;" >Edit</button>     
