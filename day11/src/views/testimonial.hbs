@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+   <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="stylesheet" href="/src/assets/css/addProject.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body style="background-color:#DCE0E4;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/src/assets/img/dumbways logo.png" alt="" style="height: 50px; padding-top: 10px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="home" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="addProject" target="_blank">Add Project</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="testimonial" target="_blank">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="contact" target="_blank">Contact Me</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+    <div >
+        <h1 style="text-align: center; " >My Testimonials</h1>
+        <h2 style="text-align: center;" >Rating By Star</h2>
+        <div class="testimonial-rating">
+            <button  style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="allTestimonials()">All</button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(1)">1 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(2)">2 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(3)">3 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(4)">4 <i class="fa -solid fa-star"></i></button>
+            <button style="background-color: black; color: white; width: 50px; height: 30px; margin: 10px;" class="Rating-btn" onclick="filterTestimonials(5)">5 <i class="fa -solid fa-star"></i></button>
+        </div>
+        <div  id="testimonials"> 
+            
+        </div>
+       
+    </div>
+   
+    <script>
+        feather.replace()
+    </script>
+    <script src="/src/js/testimonial.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>
