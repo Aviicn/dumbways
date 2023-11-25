@@ -1,11 +1,9 @@
 <html>
 
 <head>
-    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Blog Page</title>
+    <title>Add My Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,7 +11,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/index.css" />
-    <link rel="stylesheet" href="/assets/css/addProject.css" />
+    <link rel="stylesheet" href="/assets/css/addBlog.css" />
     <script src="https://unpkg.com/feather-icons"></script>
    
 </head>
@@ -30,6 +28,7 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      
     }
     
     /* Hide the browser's default radio button */
@@ -81,9 +80,8 @@
         border-radius: 5%;
         background: white;
     }
-    </style>
-<body>
-    
+</style>
+<body style="background-color: #dce0e4;" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/assets/img/dumbways logo.png" alt="" style="height: 50px; padding-top: 10px;">
@@ -116,22 +114,22 @@
     <div class="blog">
         <div class="blog-form">
             <div class="form-container">
-                <form onsubmit="submitBlog(event)">
-                    <h1>Add My Project</h1>
+                <form method="post" action="/add-blog">   
+                    <h1>Add My Blog</h1>
                     <div>
-                        <label for="inputTitle">Project Name</label>
-                        <input type="text" id="inputTitle" />
+                        <label for="inputTitle">Blog Name</label>
+                        <input type="text" name="inputTitle" />
                     </div>
                     <div>
                         <table>
                             <tr>
                                 <td>
                                     <label for="startDate">Start Date</label>
-                                    <input type="date" id="startDate" />
+                                    <input type="date" name="startDate" />
                                 </td>
                                 <td>
                                     <label for="endDate">End Date</label>
-                                    <input type="date" id="endDate" />
+                                    <input type="date" name="endDate" />
                                 </td>
                             </tr>
                         </table>
@@ -139,20 +137,21 @@
                     </div>
                     <div>
                         <label for="inputContent">Description</label>
-                        <textarea id="inputContent"></textarea>
+                        <textarea name="inputContent" ></textarea>
                     </div>
-                    <div>
-                        <label for="inputTitle">Technologies</label>
+                    <div style="height: 150px; ">
                         
-                        <table>
+                        <label for="inputTehnologi">Technologies</label>
+                        
+                        <table >
                             <tr >
                                 
-                                <td style="width: 200px;">
-                                    <label class="container">Node Js
+                               <td >
+                                    <label style="height: 30px;" class="container">Node Js
                                         <input type="radio" checked="checked" name="radio" id="nodeJs">
                                         <span class="checkmark"></span>
                                       </label>
-                                      <label class="container">React Js
+                                      <label style="height: 30px;" class="container">React Js
                                         <input type="radio" name="radio" id="reactJs">
                                         <span class="checkmark"></span>
                                       </label>
@@ -161,11 +160,11 @@
                                 </td>
                                 <td >
 
-                                    <label class="container">Next Js
+                                    <label style="height: 30px;" class="container">Next Js
                                         <input type="radio" name="radio" id="nextJs">
                                         <span class="checkmark"></span>
                                       </label>
-                                      <label class="container">Typescript
+                                      <label style="height: 30px;" class="container">Typescript
                                         <input type="radio" name="radio" id="typescript">
                                         <span class="checkmark"></span>
                                       </label>
@@ -174,17 +173,17 @@
                         </table>
                     </div>
                     <div >
-                        <label>Upload Image</label>
-                        <div class="input-blog-image-group">
+                        <label style="margin: 10px;">Upload Image</label>
+                        <div  class="input-blog-image-group">
                             <label for="inputImage"  >
-                                <input type="file" id="inputImage" style="margin-top: 20px;"  />
+                                <input type="file" name="inputImage" style="margin-top: 20px;"  />
                                 <img src="/assets/img/file.png" alt="file" />
                             </label>
                             
                         </div>
                     </div>
                     <div class="button-group">
-                        <button  style="background-color: black; color: white;">Submit</button>
+                        <button  class="btn btn-primary">Add Blog</button>
                     </div>
                 </form>
             </div>
@@ -195,8 +194,42 @@
             <div id="judul">
 
             </div>
-            <div id="contents" class="blog-list">
+            <div  id="contents" class="blog-list">
         
+        {{#each this.data as |data index|}}
+        <div style="background-color: white;" class="blog-list-item" >
+            <div class="blog-image">
+                <img src="assets/img/download cd 1.jpeg" alt="" />
+              
+            </div>
+            <div class="blog-content">
+                
+                <h1>
+                    <a href="blog-detail" >{{data.title}}</a>
+                </h1>
+                <p>Durasi : {{data.durasi}}</p>
+                
+                <p>
+                    {{data.content}}
+                </p>
+
+                <img src="assets/icon/google-play.svg" alt="" width="40px">
+                <img src="assets/icon/android1.png" alt="" width="40px">
+                <img src="assets/icon/java.svg" alt="" width="40px">
+
+                <div style="margin-top: 20px;">
+                <form style="display: inline-block;" method="get" action="/update-blog/{{index}}">    
+                  <button class="btn btn-secondary" >Edit</button>
+                </form>
+              
+                 <form  style="display: inline-block;" method="post" action="/blog/{{index}}">              
+                   <button class="btn btn-danger" >Delete</button>
+                 </form>
+                </div>
+            </div>
+        </div>`
+        {{/each}}
+
             <!-- dynamic content would be here -->
             </div>
         </div>
@@ -204,16 +237,9 @@
     <script>
         feather.replace()
     </script>
-    <script src="/js/addProject.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    <script src="/js/addBlog.js"></script>
+   
+
 </body>
 
 </html>

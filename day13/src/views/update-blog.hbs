@@ -1,0 +1,222 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add My Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/addBlog.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+   
+</head>
+<style>
+    /* The container */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      
+    }
+    
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+         top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 5%;
+        background: white;
+    }
+</style>
+<body onload="checkRadio({{this.updatedata.technologi}})">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/img/dumbways logo.png" alt="" style="height: 50px; padding-top: 10px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="home" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="blog" >Add Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="testimonial">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="contact">Contact Me</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+     
+    <div class="blog">
+        <div class="blog-form">
+            <div class="form-container">
+                <form method="post" action="/update-blog/{{this.updatedata.id}}">   
+                    <h1>Update My Blog</h1>
+                    <div>
+                        <label for="inputTitle">Blog Name</label>
+                        <input type="text" name="inputTitle" value="{{this.updatedata.title}}"/>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="startDate">Start Date</label>
+                                    <input type="date" name="startDate" value="{{this.updatedata.startDate}}"/>
+                                </td>
+                                <td>
+                                    <label for="endDate">End Date</label>
+                                    <input type="date" name="endDate" value="{{this.updatedata.endDate}}"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <label for="inputContent">Description</label>
+                        <textarea name="inputContent" >{{this.updatedata.content}}</textarea>
+                    </div>
+                   <div style="height: 150px; ">
+                        
+                        <label for="inputTehnologi">Technologies</label>
+                        
+                        <table >
+                            <tr >
+                                
+                               <td >
+                                    <label style="height: 30px;" class="container">Node Js
+                                        <input type="radio" checked="checked" name="radio" id="nodeJs">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      <label style="height: 30px;" class="container">React Js
+                                        <input type="radio" name="radio" id="reactJs">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      
+                                     
+                                </td>
+                                <td >
+
+                                    <label style="height: 30px;" class="container">Next Js
+                                        <input type="radio" name="radio" id="nextJs">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      <label style="height: 30px;" class="container">Typescript
+                                        <input type="radio" name="radio" id="typescript">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div >
+                        <label>Upload Image</label>
+                        <div class="input-blog-image-group">
+                            <label for="inputImage"  >
+                                <input type="file" name="inputImage" style="margin-top: 20px;"  value="{{this.updatedata.image}}"/>
+                                <img src="/assets/img/file.png" alt="file" />
+                            </label>
+                            
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button  class="btn btn-primary">Update Blog</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+       
+    </div>
+ 
+
+
+    <script>
+        feather.replace()
+    </script>
+    <script src="/js/addBlog.js"></script>
+
+    <script>
+         function checkRadio(name) { 
+   
+   console.log("tehnologi", name)
+   console.log("tehnologi 1", document.getElementsByName('radio').name)
+   for( let n=1; n < 4 ; n++){
+       if(name === document.getElementsByName('radio').name) {
+       document.getElementsByName('radio').checked = true;
+       }
+    }
+   }
+    </script>
+
+   
+</script>
+
+</body>
+
+</html>

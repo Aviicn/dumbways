@@ -1,0 +1,32 @@
+[
+    {
+       "author": "-Ji chang wook-",
+        "content": "keren banget jasanya!",
+        "image": "img/bang ichang.jpeg",
+        "rating": 5
+    },
+    {
+        "author": "-Seojun-",
+        "content": "kerenlah pokoknya!",
+        "image": "img/psj2.jpeg",
+        "rating": 4
+    },
+    {
+        "author": "-Kim young dae-",
+        "content": "The best pelayanannya!",
+        "image": "img/sweety.jpeg",
+        "rating": 4
+    },
+    {
+        "author": "-Nam joohyuk-",
+        "content": "oke lah!",  
+        "image": "img/vigilante.jpeg",
+        "rating": 3
+    },
+    {
+        "author": "-Han yi chan-",
+        "content": "Apa apaan ini!",
+        "image": "img/yichan.jpeg",
+        "rating":1 
+    }
+]
