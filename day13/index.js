@@ -14,6 +14,12 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 const bodyParser = require('body-parser');
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('b51_personal_web', 'postgres', '1010', {
+  models: [blog],
+  host: 'localhost',
+  dialect: 'postgres'
+});
 
 
 app.use("/assets", express.static(path.join(__dirname, 'src/assets')))
@@ -47,8 +53,19 @@ function contact(req, res) {
   res.render('contact')
 }
 
-function blog(req, res) {
-  res.render('blog', { data })
+async function blog(req, res) {
+
+  console.error("test");
+
+  try {
+    await sequelize.authenticate();
+    const datanya = await sequelize.query("select * from blogs")
+    console.log("Connection has been established successfully.",datanya);
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+
+res.render('blog', { data })
 }
 
 function addBlogView(req, res) {
