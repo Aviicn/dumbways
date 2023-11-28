@@ -1,0 +1,200 @@
+
+/* Gaya umum untuk kontainer testimonial */
+.testimonial-container {
+    width: 360px;
+    height: 400px;
+    margin: 30px;
+    padding: 10px;
+    border: 5px solid white;
+    text-align: center;
+    display: inline-table;
+    background-color: white;
+    
+    
+}
+
+/* Gaya untuk gambar testimonial */
+.testimonial-image {
+    max-width: 100%;
+    height: 350px;
+}
+
+/* Gaya untuk teks testimonial */
+.testimonial-text {
+    margin: 10px;
+    font-size: large;
+    font-style: inherit;
+}
+
+/* Gaya untuk penulis testimonial */
+.testimonial-author {
+    font-style: italic;
+    font-weight: bold;
+    font-size: larger;
+    text-align: right;
+}
+
+/* Gaya untuk rating testimonial */
+.testimonial-rating {
+    color: gold;
+    text-align: center; /* Ganti warna sesuai preferensi Anda */
+}
+
+/* Media query untuk layar desktop */
+@media only screen and (min-width: 768px) {
+    .testimonial-container {
+        width: 300px; /* Sesuaikan lebar untuk desktop */
+        height: 120px; /* Sesuaikan tinggi untuk desktop */
+    }
+}
+
+* {
+    margin:0; 
+    padding:0;
+}
+nav {
+    margin:auto;
+    text-align: left;
+    width: 100%;
+    
+} 
+
+nav ul {
+
+    padding: 5px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    width: 100%;
+ }
+
+nav ul li{
+    float:left;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+nav ul li:hover{
+    background:#28eb3f;
+}
+
+nav ul li:hover a{
+     color:#000;
+}
+
+nav ul li a{
+     display: block;
+     padding: 25px;
+     color: #fff;
+     text-decoration: none;
+}
+nav ul li a:hover{
+    background-color: red;
+}
+
+
+.btn-contact {
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+    width: 130px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 25px;
+    
+}
+
+.nav-link a {
+    color:#28eb3f;
+    text-decoration: none;
+}
+
+.nav-link a:hover {
+    color: orangered;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contoh styling untuk elemen header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Sembunyikan hamburger di awal */
+    font-size: 50px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    margin-left: 10px;
+    float: right;
+}
+
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav a {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-block;
+        font-size: 18px;
+        background: none;
+        border: none;
+        color: rgb(62, 44, 44);
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    nav ul li a {
+        display: none;
+        margin: 0;
+    }
+}
