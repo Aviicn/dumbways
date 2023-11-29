@@ -40,9 +40,13 @@ app.post('/add-blog', addBlog)
 app.get('/update-blog/:id', updateBlogView)
 app.post('/update-blog/:id', updateBlog)
 
-app.get('/blog-detail/:id', blogDetail)
+app.get('/blog-detail', blogDetail)
 app.get('/testimonial', testimonial)
 
+app.get('/register', registerView)
+app.get('/login', loginView)
+app.post('/register', register)
+app.post('/login', login)
 
 const data = []
 
@@ -274,7 +278,7 @@ async function deleteBlog(req, res) {
   }
 
 
-  data.splice(id, 1)
+  //data.splice(id, 1)
 
   res.redirect('/blog')
 
@@ -283,20 +287,50 @@ async function deleteBlog(req, res) {
 
 
 async function blogDetail(req, res) {
-  const { id } = req.params
+  //const { id } = req.params
+  //console.log('id ', id)
+  //const query = 'SELECT * FROM blogs WHERE id=' + id
+ // const obj = await sequelize.query(query)
+ // const datanya = obj[0]
+  //console.log('datanya ', datanya)
+  //console.log('datanya ', datanya[0].name)
+  res.render('blog-detail')
+  //res.render('blog-detail', { data: datanya[0] })
+}
 
-  const query = 'SELECT * FROM blogs WHERE id=$(id)'
-  const obj = await sequelize.query(query)
-  const title = "Title1"
-  const content = "Content1"
+function registerView(req, res) {
+  res.render('register')
+}
 
-  const data = {
-    id,
-    title,
-    content,
-  }
+//async function register(req, res) {
+//  const {name ,email, password} = req.body
 
-  res.render('blog-detail', { data: obj })
+//  console.log("name:", name)
+//  console.log("email:", email)
+//  console.log("password:", password)
+
+//  const salt =10
+
+//  bcrypt.hash(password, salt, async (err,hash) => {
+//    if(err){
+//      return console.error("Password Failed To Be Encrypted")
+//  }
+  
+//  console.log("Hash result :", hash)
+  //const query = 'INSERT INTO blogs (name, email, password)' VALUES ('${name}', '$
+//}//
+
+
+//}
+
+function loginView(req, res) {
+  res.render('login')
+}
+
+async function login(req, res) {
+  const {email, password} = req.body
+  const query = 'SELECT * FROM blogs WHERE email=${email}'
+  const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
 }
 
 function testimonial(req, res) {

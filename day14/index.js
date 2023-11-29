@@ -40,7 +40,7 @@ app.post('/add-blog', addBlog)
 app.get('/update-blog/:id', updateBlogView)
 app.post('/update-blog/:id', updateBlog)
 
-app.get('/blog-detail/:id', blogDetail)
+app.get('/blog-detail', blogDetail)
 app.get('/testimonial', testimonial)
 
 
@@ -274,7 +274,7 @@ async function deleteBlog(req, res) {
   }
 
 
-  data.splice(id, 1)
+  //data.splice(id, 1)
 
   res.redirect('/blog')
 
@@ -283,21 +283,17 @@ async function deleteBlog(req, res) {
 
 
 async function blogDetail(req, res) {
-  const { id } = req.params
-
-  const query = 'SELECT * FROM blogs WHERE id=$(id)'
-  const obj = await sequelize.query(query)
-  const title = "Title1"
-  const content = "Content1"
-
-  const data = {
-    id,
-    title,
-    content,
-  }
-
-  res.render('blog-detail', { data: obj })
+  //const { id } = req.params
+  //console.log('id ', id)
+  //const query = 'SELECT * FROM blogs WHERE id=' + id
+ // const obj = await sequelize.query(query)
+ // const datanya = obj[0]
+  //console.log('datanya ', datanya)
+  //console.log('datanya ', datanya[0].name)
+  res.render('blog-detail')
+  //res.render('blog-detail', { data: datanya[0] })
 }
+
 
 function testimonial(req, res) {
   res.render('testimonial')
