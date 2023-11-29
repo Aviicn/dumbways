@@ -7,14 +7,11 @@ const hbs = require('hbs');
 const app = express();
 const port = 3000;
 
-app.set("views", path.join(__dirname, 'src/views'))
-
-
-app.set('view engine', 'hbs');
-app.use(express.static('public'));
-
+const config = require("./src/config/config.json")
+const blogModel = require("./src/models").blog
 const bodyParser = require('body-parser');
-const Sequelize = require('sequelize');
+const { Sequelize, QueryTypes } = require('sequelize');
+
 const { type } = require('os');
 const { types } = require('util');
 const sequelize = new Sequelize('b51_personal_web', 'postgres', '1010', {
@@ -23,10 +20,33 @@ const sequelize = new Sequelize('b51_personal_web', 'postgres', '1010', {
   dialect: 'postgres'
 });
 
+const bcrypt = require("bcrypt")
+const saltRounds = 10
+const password = "1010"
+const session =require ('express-session')
+const flash =require ('express-flash')
+
+
+app.set("views", path.join(__dirname, 'src/views'))
+
+
+app.set('view engine', 'hbs');
+app.use(express.static('public'));
 
 app.use("/assets", express.static(path.join(__dirname, 'src/assets')))
 app.use("/js", express.static(path.join(__dirname, 'src/js')))
 app.use(express.urlencoded({ extended: false }))
+app.use(flash())
+app.use(session({
+  name:'data',
+  secret:'rahasiabanget',
+  resave : false,
+  saveuninitialized : true,
+  cookie:{
+    secure : false,
+    maxAge :1000 * 60 * 60 * 24
+  }
+}))
 
 app.get('/', home1)
 app.get('/home', home)
@@ -44,8 +64,9 @@ app.get('/blog-detail', blogDetail)
 app.get('/testimonial', testimonial)
 
 app.get('/register', registerView)
-app.get('/login', loginView)
 app.post('/register', register)
+
+app.get('/login', loginView)
 app.post('/login', login)
 
 const data = []
@@ -302,35 +323,90 @@ function registerView(req, res) {
   res.render('register')
 }
 
-//async function register(req, res) {
-//  const {name ,email, password} = req.body
+async function register(req, res) {
+  const {inputName ,inputEmail, inputPassword} = req.body
 
-//  console.log("name:", name)
-//  console.log("email:", email)
-//  console.log("password:", password)
+ console.log("name:",inputName)
+console.log("email:", inputEmail)
+console.log("password:", inputPassword)
 
-//  const salt =10
+const  saltRounds = 10
 
-//  bcrypt.hash(password, salt, async (err,hash) => {
-//    if(err){
-//      return console.error("Password Failed To Be Encrypted")
-//  }
-  
-//  console.log("Hash result :", hash)
-  //const query = 'INSERT INTO blogs (name, email, password)' VALUES ('${name}', '$
-//}//
+bcrypt.hash(password, salt, async (err,hash) => {
+  if (err) {
+    console.error("Password failed to be encrypted!")
+    req.flash('danger', 'Register failed : Password failed to be encrypted!') 
+    return res.redirect('/register')
+  }
+})
 
 
-//}
+  const query = 
+    "INSERT INTO users (name, email, password)"
+    + " VALUES ('"
+    + inputName + "','" + inputEmail + "','" + hash + "')"
+  console.log("response : ",query)
+
+  try {
+    const obj = await sequelize.query(query)
+    req.flash('success','Register success!')
+    res.redirect('/')
+  }
+  catch (error) {
+    console.error("Unable to connect to the database:", error);
+    res.render('login')
+}
+}
 
 function loginView(req, res) {
   res.render('login')
 }
 
 async function login(req, res) {
-  const {email, password} = req.body
-  const query = 'SELECT * FROM blogs WHERE email=${email}'
-  const obj = await sequelize.query(query, { type: QueryTypes.SELECT })
+  const {inputEmail, inputPassword} = req.body
+  const query = "SELECT * FROM users WHERE email = '"+inputEmail+"' AND password = '"+inputPassword+"'"
+  //console.log ("req.body:", req.body)
+  try {
+    const obj = await sequelize.query(query, {type: QueryTypes.SELECT})
+    
+    const tmp = obj[0]
+    if(tmp.length>0) {
+    const hasil = tmp[0]
+    console.log("response : ",hasil.email)
+    bcrypt.compare(inputpassword, hasil.password, (err, result) => {
+      if (err) {
+        req.flash('danger','Login failed : internal server error!')
+         console.error("Login Internal Server Error!")
+        return res.redirect ('/login')
+      }
+      if (err) {
+        console.error("Password Is Wrong")
+        eq.flash('danger','Login failed : password is wrong')
+        return res.redirect('/login')
+      }
+
+      console.log('Login Succes!')
+      req.flash('success','Login success!')
+      req.session.isLogin = true
+      req.session.user = {
+        name: hasil.name,
+        email: hasil.email
+      }
+      res.render('home')
+    })
+   
+    }
+    else
+    {
+      res.render('login')
+    }
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+    res.render('login')
+  }
+
+
+ 
 }
 
 function testimonial(req, res) {

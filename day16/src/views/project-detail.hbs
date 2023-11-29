@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="stylesheet" href="/src/assets/css/addProject.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>My Project - Detail</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .blog-detail {
+            position: relative;
+            margin: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .big-image {
+            height: 300px;
+            width: 550px;
+            margin-right: 20px;
+        }
+
+        .blog-detail-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table img {
+            width: 30px;
+            height: 20px;
+        }
+
+       
+
+
+        p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/src/assets/img/dumbways logo.png" alt="" style="height: 50px; padding-top: 10px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="home" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="addProject" target="_blank">Add Project</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="testimonial" target="_blank">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="contact" target="_blank">Contact Me</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+  <!-- Blog -->
+  <div class="blog-detail">
+    <div class="blog-detail-container">
+        <h1>dumbways Web App</h1>
+
+        <!-- Big Image, Icon, and Description in the same row -->
+        <div style="display: flex; align-items: center;">
+            <div class="big-image">
+                <img src="img/images phone 1.jpeg" alt="Big Image" ; width="550px" ; height="300px" class="big-image">
+            </div>
+            <table id="myTable">
+                <!-- ... (previous code) ... -->
+
+                <thead>
+                    <tr>
+                        <th style=" text-align: left; margin: 10px;"><h3>Duration</h3></th>                      
+                    </tr>
+                </thead>
+                <thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="icon/calendar-days-solid.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                        <a >12 Jan 2021 - 11 Feb 2022</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="icon/clock-regular.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                            <a >1 month</a>
+                      </td>
+                        </tr>
+                    </tr>
+                </tbody>
+                </thead>
+
+                <thead>
+                    <tr>
+                        <th style=" text-align: left; margin: 10px;"><h3>Technologies</h3></th>      
+                    </tr>
+                </thead>
+                <thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 50px;">
+                            <img src="icon/react.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                            <a >React.js</a>
+                      </td> 
+                   
+                      <td>
+                        <img src="icon/node-js.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                        <a >Node.js</a>
+                  </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="icon/square-js.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                        <a >JavaScript</a>
+                        </td>
+                 
+                        <td>
+                            <img src="icon/Socket Io.svg" alt="detail" ; style=" width: 20px; height: 20px;" />
+                            <a >Socket IO</a>
+                      </td>
+                    </tr>
+        </tbody>
+        </thead>
+
+        <!-- ... (remaining code) ... -->
+
+
+        </table>
+    </div>
+
+    <p>
+        <!-- Your blog content goes here -->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis facilis, magni culpa maxime voluptatem,
+        pariatur quis veniam modi fuga ad ipsa voluptatibus. Unde numquam corporis provident quo quibusdam
+        temporibus nostrum. ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati consequuntur inventore
+        voluptatibus
+    </p>
+    <p> mollitia minima iure, nobis quam? Esse deleniti error repudiandae quaerat, qui pariatur eligendi
+        officiis maxime eaque, ex maiores quae laborum corporis consequatur iure vel ullam distinctio.
+        Perferendis laboriosam nisi soluta inventore quisquam vitae dolor ab totam debitis praesentium? ipsum
+        dolor sit amet, consectetur adipiscing elit. Nullam non metus nec risus luctus consectetur.
+    </p>
+    <p> Fusce convallis bibendum dui, non rhoncus ligula vehicula a. Duis auctor arcu at bibendum vestibulum.
+        Vivamus vitae velit vitae leo tincidunt efficitur. Sed vestibulum urna eu neque tincidunt tristique.
+        Quisque vel sollicitudin mauris. Curabitur vel felis id nunc gravida finibus. Sed posuere, sapien ac
+        bibendum varius, nunc orci imperdiet sapien, a aliquet leo lacus eget purus. Etiam vel nisi at justo
+        pulvinar varius.
+    </p>
+</div>
+</div>
+<script>
+    feather.replace()
+</script>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+</body>
+
+</html>
