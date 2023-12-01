@@ -29,7 +29,7 @@ const flash = require('express-flash');
 const { listenerCount } = require('events');
 
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" })
+const upload = multer({ dest: "src/uploads/" })
 
 app.set("views", path.join(__dirname, 'src/views'))
 
@@ -38,6 +38,7 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 app.use("/assets", express.static(path.join(__dirname, 'src/assets')))
+app.use("/uploads", express.static(path.join(__dirname, 'src/uploads')))
 app.use("/js", express.static(path.join(__dirname, 'src/js')))
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -59,10 +60,10 @@ app.get('/blog', blog)
 app.post('/blog/:id', deleteBlog)
 
 app.get('/add-blog', addBlogView)
-app.post('/add-blog', addBlog)
+app.post('/add-blog', upload.single('inputImage'), addBlog)
 
 app.get('/update-blog/:id', updateBlogView)
-app.post('/update-blog/:id', updateBlog)
+app.post('/update-blog/:id', upload.single('inputImage'),updateBlog)
 
 app.get('/blog-detail/:id', blogDetail)
 app.get('/testimonial', testimonial)
@@ -113,10 +114,10 @@ async function blog(req, res) {
   try {
     const data1 = await sequelize.query(query)
     const datanya = data1[0]
-    console.log("hasil : ", datanya[0])
+    //console.log("hasil : ", datanya[0])
     if (datanya != null) {
       datanya.forEach(element => {
-
+        console.log("hasil : ", element)
 
         const jarakWaktuMillis = Math.abs(new Date(element.enddate) - new Date(element.startdate));
 
@@ -149,7 +150,7 @@ async function blog(req, res) {
           enddate: element.enddate,
 
           content: element.description,
-          image: datanya.image,
+          image: element.image,
           technologi: element.technologies,
 
           bulan: bulan,
@@ -164,6 +165,7 @@ async function blog(req, res) {
         dataBlog.enddate = dataBlog.enddate.toISOString().substring(0, 10)
         data.push(dataBlog)
       })
+      console.log("++++++ ",data)
       res.render('blog', { data: data, isLogin, user })
     }
   } catch (error) {
@@ -178,6 +180,10 @@ function addBlogView(req, res) {
 }
 
 async function addBlog(req, res) {
+  const image = req.file.filename
+  //const authorid = req.session.user.id
+console.log("Image ",image)
+console.log("Image vv",req.file)
 
   const jarakWaktuMillis = Math.abs(new Date(req.body.enddate) - new Date(req.body.startdate));
 
@@ -207,7 +213,7 @@ async function addBlog(req, res) {
     enddate: req.body.enddate,
 
     content: req.body.inputContent,
-    image: req.body.inputImage,
+    image: image,
     technologi: req.body.radio,
 
     bulan: bulan,
@@ -255,6 +261,7 @@ function updateBlogView(req, res) {
 
 async function updateBlog(req, res) {
   const { id } = req.params
+  const image = req.file.filename
   //console.log("===================== : ",id)
   //console.log(">>>>>>>>>=============== : ",req.body)
   const jarakWaktuMillis = Math.abs(new Date(req.body.enddate) - new Date(req.body.startdate));
@@ -287,7 +294,7 @@ async function updateBlog(req, res) {
     enddate: req.body.enddate,
 
     content: req.body.inputContent,
-    image: req.body.inputImage,
+    image: image,
     technologi: req.body.radio,
 
     bulan: bulan,

@@ -120,7 +120,7 @@
     <div class="blog">
         <div class="blog-form">
             <div class="form-container">
-                <form method="post" action="/add-blog">
+                <form method="post" action="/add-blog" enctype="multipart/form-data">
                     <h1>Add My Blog</h1>
                     <div>
                         <label for="inputTitle">Blog Name</label>
@@ -205,7 +205,7 @@
                 {{#each this.data as |data index|}}
                 <div style="background-color: white;" class="blog-list-item">
                     <div class="blog-image">
-                        <img src="assets/img/download cd2.jpeg" alt="" />
+                        <img src="uploads/{{data.image}}" alt="" />
 
                     </div>
                     <div class="blog-content">
